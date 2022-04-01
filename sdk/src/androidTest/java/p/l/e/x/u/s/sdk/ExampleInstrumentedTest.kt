@@ -1,4 +1,4 @@
-package p.l.e.x.u.s
+package p.l.e.x.u.s.sdk
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -18,6 +18,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("p.l.e.x.u.s", appContext.packageName)
+        assertEquals("p.l.e.x.u.s.sdk.test", appContext.packageName)
     }
 }

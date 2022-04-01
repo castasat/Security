@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/security_graph.xml"
+    app:startDestination="@id/securityActivity">
+
+    <activity
+        android:id="@+id/securityActivity"
+        android:name="p.l.e.x.u.s.security.app.ui.activity.SecurityActivity"
+        android:label="security_activity"
+        tools:layout="@layout/activity_security">
+
+    </activity>
+
+    <!-- TODO navigate to exampleFragment
+
+   <fragment
+       android:id="@+id/exampleFragment"
+       android:name="ru.sberbank.sberapps.sdk.ui.fragment.example.ExampleFragment"
+       android:label="fragment_example"
+       tools:layout="@layout/fragment_example">
+
+       <action
+           android:id="@+id/action_exampleFragment_to_whichSuFragment"
+           app:destination="@id/whichSuFragment"
+           app:enterAnim="@anim/slide_in"
+           app:exitAnim="@anim/slide_left"
+           app:popEnterAnim="@anim/slide_right"
+           app:popExitAnim="@anim/slide_out" />
+
+   </fragment>
+
+   <fragment
+       android:id="@+id/whichSuFragment"
+       android:name="ru.sberbank.sberapps.sdk.ui.fragment.checkRoot.WhichSuFragment"
+       android:label="fragment_which_su"
+       tools:layout="@layout/fragment_which_su" />
+
+   /TODO -->
+
+</navigation>

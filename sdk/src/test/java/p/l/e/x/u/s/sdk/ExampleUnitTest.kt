@@ -1,4 +1,4 @@
-package p.l.e.x.u.s
+package p.l.e.x.u.s.sdk
 
 import org.junit.Test
 
