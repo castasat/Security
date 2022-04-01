@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.util.Log
 import p.l.e.x.u.s.sdk.manager.SdkApplicationManager
 import p.l.e.x.u.s.sdk.usecases.ICanManageSdkApplication
+import p.l.e.x.u.s.security.BuildConfig
 
 open class SdkApplication : Application(),
     ICanManageSdkApplication by SdkApplicationManager() {

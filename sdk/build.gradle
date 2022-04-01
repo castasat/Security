@@ -1,9 +1,11 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 android {
-    namespace 'p.l.e.x.u.s.sdk'
+    namespace 'p.l.e.x.u.s.security'
     compileSdk 32
     compileSdkVersion 32
     buildToolsVersion '32.0.0'
@@ -68,6 +70,9 @@ configurations {
     cleanedAnnotations
 }
 dependencies {
+    // Versions
+    def version_hilt = '2.41'
+    def version_hilt_compiler = '1.0.0'
     // Libraries
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // AndroidX
@@ -75,6 +80,10 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     // Design
     implementation 'com.google.android.material:material:1.5.0'
+    // DI
+    implementation "com.google.dagger:hilt-android:$version_hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$version_hilt"
+    kapt "androidx.hilt:hilt-compiler:$version_hilt_compiler"
     // Tests
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

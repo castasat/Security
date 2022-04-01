@@ -1,12 +1,28 @@
 package p.l.e.x.u.s.sdk.manager
 
 import p.l.e.x.u.s.sdk.SdkApplication
+import p.l.e.x.u.s.sdk.SdkApplication.Companion.log
+import p.l.e.x.u.s.sdk.root.accessed.resetprop.Resetprop
+import p.l.e.x.u.s.sdk.root.accessed.superuser.Superuser
+import p.l.e.x.u.s.sdk.root.binary.busibox.FindBusyboxBinary
+import p.l.e.x.u.s.sdk.root.binary.su.FindSuBinary
+import p.l.e.x.u.s.sdk.root.build_tags.CheckOSBuildKeys
+import p.l.e.x.u.s.sdk.root.hooks.FindHooks
+import p.l.e.x.u.s.sdk.screenshots.SdkCallbacks
 import p.l.e.x.u.s.sdk.usecases.ICanManageSdkApplication
+import p.l.e.x.u.s.sdk.root.accessed.xposed.Xposed
+import p.l.e.x.u.s.sdk.root.os_debuggable.CheckOsDebuggable
+import p.l.e.x.u.s.sdk.root.os_insecure.OsInsecure
+import p.l.e.x.u.s.sdk.root.permissive_selinux.SeLinux
+import p.l.e.x.u.s.sdk.root.root_adb.RootAdbService
+import p.l.e.x.u.s.sdk.root.sys_initd.SysInitd
+import p.l.e.x.u.s.sdk.root.which_su.WhichSu
+import p.l.e.x.u.s.sdk.root.write_permissions.WriteOnSystem
 
 class SdkApplicationManager : ICanManageSdkApplication {
 
     override fun initialize(application: SdkApplication) {
-        /*TODO application.registerActivityLifecycleCallbacks(SdkCallbacks)
+        application.registerActivityLifecycleCallbacks(SdkCallbacks)
         // TODO show on UI and disable corporate application usage
         val suIsPresentInSystem = WhichSu().whichSu()
         log("suIsPresentInSystem = $suIsPresentInSystem")
@@ -40,10 +56,10 @@ class SdkApplicationManager : ICanManageSdkApplication {
         val isBusyboxBinaryFound = FindBusyboxBinary().checkIfBusyboxBinaryFound()
         log("isBusyboxBinaryFound = $isBusyboxBinaryFound")
         val hooksAreFound = FindHooks().checkIfHooksFound()
-        log("hooksAreFound = $hooksAreFound")*/
+        log("hooksAreFound = $hooksAreFound")
     }
 
     override fun clear(application: SdkApplication) {
-        /*TODO application.unregisterActivityLifecycleCallbacks(SdkCallbacks)*/
+        application.unregisterActivityLifecycleCallbacks(SdkCallbacks)
     }
 }

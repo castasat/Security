@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="p.l.e.x.u.s.security.app.ui.activity.SecurityViewModel" />
+
+    </data>
+
+    <!-- Содержимое фрагмента -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_ground_main_white">
+
+        <!-- Заголовок фрагмента -->
+
+        <TextView
+            android:id="@+id/headerTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/app_name"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- / Заголовок фрагмента -->
+
+        <!-- Кнопки -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonsConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/versionConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerTitleTextView">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/whichSuAppCompatButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/green_action_button_bg_selector"
+                android:enabled="true"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.whichSu()}"
+                android:paddingVertical="14dp"
+                android:text="@string/whichSu"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- / Кнопки -->
+
+        <!-- Версия приложения -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/versionConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonsConstraintLayout">
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/topOfVersionBarrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="versionNameLabelTextView,versionNameValueTextView" />
+
+            <!-- Имя версии -->
+
+            <TextView
+                android:id="@+id/versionNameLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/version"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/versionCodeLabelTextView"
+                app:layout_constraintEnd_toStartOf="@+id/versionNameValueTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/topOfVersionBarrier"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/versionNameValueTextView"
+                text="@{viewModel.VERSION_NAME}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/versionCodeValueTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/versionNameLabelTextView"
+                app:layout_constraintTop_toTopOf="@+id/topOfVersionBarrier"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="1.0.0" />
+
+            <!-- / Имя версии -->
+
+            <!-- Код версии -->
+
+            <TextView
+                android:id="@+id/versionCodeLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/code"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/buildVariantLabelTextView"
+                app:layout_constraintEnd_toStartOf="@+id/versionCodeValueTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/versionNameLabelTextView" />
+
+            <TextView
+                android:id="@+id/versionCodeValueTextView"
+                text="@{viewModel.VERSION_CODE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/buildVariantValueTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/versionCodeLabelTextView"
+                app:layout_constraintTop_toBottomOf="@+id/versionNameValueTextView"
+                tools:text="1" />
+
+            <!-- / Код версии -->
+
+            <!-- Тип сборки -->
+
+            <TextView
+                android:id="@+id/buildVariantLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/build_type"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/buildDateLabelTextView"
+                app:layout_constraintEnd_toStartOf="@+id/buildVariantValueTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/versionCodeLabelTextView" />
+
+            <TextView
+                android:id="@+id/buildVariantValueTextView"
+                text="@{viewModel.BUILD_VARIANT}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/buildDateValueTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buildVariantLabelTextView"
+                app:layout_constraintTop_toBottomOf="@+id/versionCodeValueTextView"
+                tools:text="release" />
+
+            <!-- / Тип сборки -->
+
+            <!-- Дата сборки -->
+
+            <TextView
+                android:id="@+id/buildDateLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/build_date"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/buildVariantValueTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buildVariantLabelTextView" />
+
+            <TextView
+                android:id="@+id/buildDateValueTextView"
+                text="@{viewModel.BUILD_DATE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buildDateLabelTextView"
+                app:layout_constraintTop_toBottomOf="@+id/buildVariantValueTextView"
+                tools:text="2022-01-12" />
+
+            <!-- / Дата сборки -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Версия приложения -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- / Содержимое фрагмента -->
+
+</layout>

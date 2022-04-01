@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="p.l.e.x.u.s.security.app.ui.activity.SecurityViewModel" />
+    </data>
+
+    <!-- Содержимое фрагмента -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_ground_main_white">
+
+        <!-- Заголовок фрагмента -->
+
+        <TextView
+            android:id="@+id/headerTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="56dp"
+            android:text="@string/whichSu"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- / Заголовок фрагмента -->
+
+        <!-- Результат поиска команды SU -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/whichSuConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerTitleTextView">
+
+
+            <TextView
+                android:id="@+id/whichSuTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{viewModel.whichSuResultTextLiveData}"
+                tools:text="Which 'SU'" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- / Резыльтат поиска команды SU -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- / Содержимое фрагмента -->
+
+</layout>

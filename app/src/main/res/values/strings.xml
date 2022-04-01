@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Security</string>
+    <string name="version">Version</string>
+    <string name="code">Code</string>
+    <string name="build_type">Build type</string>
+    <string name="build_date">Build date</string>
+    <string name="whichSu">Which SU binary</string>
 </resources>

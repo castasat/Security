@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_500">#66080808</color>
+    <color name="purple_700">#CC080808</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey_100">#222222</color>
+
+    <color name="grey80">#7c7c7c</color>
+    <color name="grey60">#b1b1b1</color>
+
+    <color name="red70">#ea1515</color>
+
+    <color name="text_light">#4c4c4c</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_black">#de000000</color>
+
+    <color name="green70">#21A038</color>
+
+    <color name="green_action_button_disabled">#66148F2B</color>
+    <color name="green_action_button_enabled">#148F2B</color>
+
+    <color name="gray_action_button_disabled">#7c7c7c</color>
+    <color name="gray_action_button_enabled">#0F080808</color>
+    <color name="gray_input_edit_text">#0F080808</color>
+    <color name="gray_input_edit_text_layout_hint_color">#8F080808</color>
+    <color name="back_ground_main_white">#E5E5E5</color>
+
+    <color name="shimmer_placeholder">#dddddd</color>
+
+    <color name="blur_shadow">#661D1D1D</color>
 </resources>

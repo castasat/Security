@@ -1,4 +1,4 @@
-package p.l.e.x.u.s.security.app.ui.base
+package p.l.e.x.u.s.security.app.base
 
 import android.graphics.Color
 import android.view.View

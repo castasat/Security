@@ -3,21 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/security_graph.xml"
-    app:startDestination="@id/securityActivity">
+    app:startDestination="@id/exampleFragment">
 
-    <activity
-        android:id="@+id/securityActivity"
-        android:name="p.l.e.x.u.s.security.app.ui.activity.SecurityActivity"
-        android:label="security_activity"
-        tools:layout="@layout/activity_security">
-
-    </activity>
-
-    <!-- TODO navigate to exampleFragment
 
    <fragment
        android:id="@+id/exampleFragment"
-       android:name="ru.sberbank.sberapps.sdk.ui.fragment.example.ExampleFragment"
+       android:name="p.l.e.x.u.s.security.app.ui.fragment.example.ExampleFragment"
        android:label="fragment_example"
        tools:layout="@layout/fragment_example">
 
@@ -33,10 +24,8 @@
 
    <fragment
        android:id="@+id/whichSuFragment"
-       android:name="ru.sberbank.sberapps.sdk.ui.fragment.checkRoot.WhichSuFragment"
+       android:name="p.l.e.x.u.s.security.app.ui.fragment.checkRoot.WhichSuFragment"
        android:label="fragment_which_su"
        tools:layout="@layout/fragment_which_su" />
-
-   /TODO -->
 
 </navigation>
