@@ -12,9 +12,7 @@ abstract class BaseDataBindingFragment<B : ViewDataBinding, VM : BaseViewModel>(
     private val layoutId: Int
 ) : BaseFragment() {
 
-    private var _binding: B? = null
-    protected val binding: B
-        get() = _binding!!
+    private var binding: B? = null
 
     protected abstract val viewModel: VM
 
@@ -22,17 +20,16 @@ abstract class BaseDataBindingFragment<B : ViewDataBinding, VM : BaseViewModel>(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        binding.lifecycleOwner = viewLifecycleOwner
-        binding.setVariable(BR.viewModel, viewModel)
-
-        return binding.root
+    ): View? {
+        binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        binding?.lifecycleOwner = viewLifecycleOwner
+        binding?.setVariable(BR.viewModel, viewModel)
+        return binding?.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding = null
     }
 
     override fun tryGoBack() {

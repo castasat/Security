@@ -42,7 +42,8 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
                        sdk
-
+                       # Links the target library to the android library
+                       -landroid
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
